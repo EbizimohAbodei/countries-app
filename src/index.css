@@ -1,13 +1,65 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  height: 75px;
+  justify-content: space-between;
+  height: 4rem;
+  background-color: #e1edf2;
+}
+
+body {
+  margin: 0px;
+  background-color: #fff6ff;
+}
+
+main {
+  min-height: calc(100vh - 110px);
+  margin: 5px;
+}
+
+.countriesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 6fr));
+  gap: 0.5rem;
+  height: auto;
+  width: 100%;
+  min-height: 2rem;
+  cursor: pointer;
+  margin: 4px 2px 4px 0;
+}
+
+.cardContainer {
+  text-align: center;
+  height: auto;
+  background-color: #e1edf2;
+  border: 1px;
+  border-style: solid;
+  border-radius: 0.2rem;
+}
+
+.cardContainer img {
+  width: 100%;
+  border-radius: 0.25rem 0.25rem 0rem 0rem;
+  object-fit: cover;
+  height: auto;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 50px;
+  background-color: #e1edf2;
 }
