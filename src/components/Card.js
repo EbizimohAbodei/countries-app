@@ -1,10 +1,12 @@
 import React from "react";
+import classes from "./card.module.css";
 
 const Card = (props) => {
+  // Object.values(CUR || {}).map((val, i) => (<span key={i}>{i ? }</span>));
   return (
-    <div className="cardContainer">
+    <div className={classes.card}>
       <img src={props.src} alt={props.name}></img>
-      <h2 className="countryName"> {props.countryName}</h2>
+      <h2 className={classes.countryName}> {props.countryName}</h2>
       <h4 className="countryCapital">Capital: {props.capital}</h4>
       <h4 className="countryContinent">Continent: {props.continent}</h4>
       <h4 className="countryPopulation">Population: {props.population}</h4>

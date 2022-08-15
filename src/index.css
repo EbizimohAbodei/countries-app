@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&family=Open+Sans&family=Roboto+Slab&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -10,16 +12,60 @@ header {
   height: 75px;
   justify-content: space-between;
   height: 4rem;
-  background-color: #e1edf2;
 }
 
 body {
   margin: 0px;
-  background-color: #fff6ff;
+  background-image: url(./assets/images/greg-rosenke-1TjORT2dLOw-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+}
+
+Nav ul {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  padding: 1rem 20px;
+}
+
+Nav a {
+  text-decoration: none;
+  padding: 0 15px;
+  font-size: 30px;
+  color: rgb(207, 203, 203);
+}
+
+.active {
+  color: whitesmoke;
+  border-bottom: 3px solid white;
+}
+
+.heroText {
+  margin: 10rem 3rem;
+  width: 20rem;
+}
+
+.searchContainer {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.title {
+  font-size: 2rem;
+  color: whitesmoke;
+}
+
+.searchInput {
+  width: 60%;
+  height: 1.5rem;
+  margin: 1rem 0;
 }
 
 main {
-  min-height: calc(100vh - 110px);
+  min-height: calc(81vh - 100px);
   margin: 5px;
 }
 
@@ -28,31 +74,11 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(250px, 6fr));
   gap: 0.5rem;
   height: auto;
+  font-family: "EB Garamond", serif;
   width: 100%;
   min-height: 2rem;
   cursor: pointer;
   margin: 4px 2px 4px 0;
-}
-
-.cardContainer {
-  text-align: center;
-  height: auto;
-  background-color: #e1edf2;
-  border: 1px;
-  border-style: solid;
-  border-radius: 0.2rem;
-}
-
-.cardContainer img {
-  width: 100%;
-  border-radius: 0.25rem 0.25rem 0rem 0rem;
-  object-fit: cover;
-  height: auto;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 footer {

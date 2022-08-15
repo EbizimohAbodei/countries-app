@@ -1,10 +1,10 @@
 import React from "react";
-import CountriesList from "./CountriesList";
+import { Outlet } from "react-router-dom";
 
 const Main = () => {
   return (
     <main>
-      <CountriesList />
+      <Outlet />
     </main>
   );
 };
