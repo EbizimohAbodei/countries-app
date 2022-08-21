@@ -1,0 +1,42 @@
+.searchForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #eee;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border-radius: 0.2rem;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  width: 40rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  font-size: larger;
+}
+
+.searchButton {
+  width: 1rem;
+  height: 1rem;
+  margin-left: -1.2rem;
+  display: grid;
+  place-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 6fr));
+  gap: 0.5rem;
+  height: auto;
+  font-family: "EB Garamond", serif;
+  width: 100%;
+  min-height: 2rem;
+  cursor: pointer;
+  margin: 4px 2px 4px 0;
+}

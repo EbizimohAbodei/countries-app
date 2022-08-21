@@ -1,0 +1,53 @@
+.card {
+  text-align: center;
+  height: auto;
+  background: #e1edf2;
+  border: 1px;
+  border-style: solid;
+  border-radius: 0.2rem;
+}
+
+.card img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 5rem;
+  position: absolute;
+  background-color: white;
+  margin: -0.6rem 6.85rem;
+  object-fit: cover;
+}
+
+.countryName {
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(197, 197, 240);
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+/* .countryDetailsContainer {
+  display: flex;
+  justify-content: space-between;
+} */
+
+/* Media query for Laptops - Retina Screens */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  .card img {
+    margin: -0.5rem 6rem;
+  }
+}
+
+/* Media query for Large Monitors */
+@media screen and (min-device-width: 1600px) and (max-device-width: 2300px) and (-webkit-min-device-pixel-ratio: 1) {
+  .card img {
+    margin: -0.5rem 5.6rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .card img {
+    margin: -0.5rem 7.3rem;
+  }
+}

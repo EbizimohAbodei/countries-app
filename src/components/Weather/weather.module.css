@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&family=Open+Sans&family=Roboto+Slab&display=swap");
+
+.weatherContainer {
+  margin-bottom: 0.8rem;
+}
+
+.temperature {
+  font-size: 3.5rem;
+}
+
+.weatherDescription {
+  font-size: 2rem;
+  font-family: "EB Garamond", serif;
+}
+
+.weatherIcon {
+  height: 7rem;
+  width: 7rem;
+  filter: grayscale(0);
+}

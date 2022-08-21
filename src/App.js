@@ -2,10 +2,9 @@ import "./index.css";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./pages/Layout";
 import { useParams } from "react-router-dom";
-import CountriesList from "./components/CountriesList";
-import Home from "./components/Home";
-import singlecountry from "./components/SingleCountry";
-import SingleCountry from "./components/SingleCountry";
+import CountriesList from "./components/Countries/CountriesList";
+import Home from "./components/Home/Home";
+import SingleCountry from "./components/SingleCountry/SingleCountry";
 
 const RouterWrapper = (props) => {
   const params = useParams();

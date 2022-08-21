@@ -1,0 +1,39 @@
+.singleContainer {
+  background-image: url("/src/assets/images/yue-su-YAXSmnTcAh8-unsplash.jpg");
+  display: inline-block;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  filter: grayscale(60%);
+  height: 87vh;
+  width: 100vw;
+}
+
+.countryName {
+  margin-top: 20vh;
+  color: #013a69;
+  font-size: 3rem;
+  filter: grayscale(0);
+}
+
+.countryCapital {
+  font-size: 2rem;
+  color: #03111d;
+}
+
+.mapLink {
+  color: rgb(218, 224, 229);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.mapLink:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-height: 900px) {
+  .singleContainer {
+    height: 84vh;
+  }
+}

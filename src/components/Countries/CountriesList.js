@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import Card from "./Card";
-import Loading from "./Loading";
+import Card from "../Card/Card";
+import classes from "./countries.module.css";
+import Loading from "../Loading/Loading";
+import { RiSearch2Line } from "react-icons/ri";
 
 const axios = require("axios").default;
 
 const CountriesList = () => {
   const [countries, setCountries] = useState([]);
-  const [weather, setWeather] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [language, setLanguage] = useState(true);
-  const [searchData, setSearchData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [searchData, setSearchData] = useState("");
 
   useEffect(() => {
     const getApiData = async () => {
@@ -23,16 +23,13 @@ const CountriesList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Does the search by filtering data from local storage based on user input onChange
+  const countryList = countries.filter((res) => {
+    res.name.common = res?.name?.common.toLowerCase();
+    return res.name.common.includes(searchData.toLowerCase());
+  });
+
   const handleSearch = (e) => {
-    setSearchData(e.target.value.toLocaleLowerCase());
-    // eslint-disable-next-line
-    const filteredArr = countries?.filter((country) => {
-      if (country.name?.common?.toLocaleLowerCase().includes(searchData)) {
-        return country;
-      }
-    });
-    setCountries(filteredArr);
+    setSearchData(e.target.value);
   };
 
   function k_mFormatter(num) {
@@ -41,42 +38,42 @@ const CountriesList = () => {
       : Math.sign(num) * (Math.abs(num) / 1000000).toFixed(1) + "m";
   }
 
-  // const weather = (lat, lng) => {
-  //   fetch(
-  //     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=bae02bad98891dafbb566c9bd8573582`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((resp) => {
-  //       return console.log(resp.main);
-  //     });
-  // };
+  function capitalize(string) {
+    const words = string.split(" ");
 
-  // weather(20, 20);
+    for (let i = 0; i < words.length; i++) {
+      words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+    }
+    return words.join(" ");
+  }
+
   return (
-    <div className="">
-      <div className="searchContainer">
-        <h3 className="title">Search Countries</h3>
+    <div className={classes.countriesContainer}>
+      <div className={classes.searchForm}>
         <input
           type="text"
-          className="searchInput"
+          className={classes.searchInput}
           onChange={handleSearch}
         ></input>
+        <button type="button" className={classes.searchButton}>
+          <RiSearch2Line className="searchIcon" />
+        </button>
       </div>
       {loading && <Loading />}
-      <div className="countriesContainer">
-        {countries.map((country) => (
+      <div className={classes.cardContainer}>
+        {countryList.map((country) => (
           <Card
             key={country.name.common}
             src={country.flags.svg}
-            countryName={country.name.common}
+            countryName={capitalize(country.name.common)}
             capital={country.capital}
             population={k_mFormatter(country.population)}
             continent={country.continents}
             timezone={country.timezones[0]}
             language={Object.values(country.languages || {}).join(", ")}
-            currency={Object.values(
-              Object.entries(country.currencies || {}) || {}
-            ).join(" ")}
+            currency={Object.values(country.currencies || {}).map(
+              (currency) => currency.name
+            )}
           />
         ))}
       </div>
