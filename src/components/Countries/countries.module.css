@@ -18,11 +18,15 @@
   font-size: larger;
 }
 
+.searchInput:focus {
+  outline: 2px solid #eee;
+}
+
 .searchButton {
   width: 1rem;
   height: 1rem;
   margin-left: -1.2rem;
-  display: grid;
+  display: flex;
   place-items: center;
   background-color: transparent;
   border: none;
@@ -32,11 +36,13 @@
 .cardContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 6fr));
-  gap: 0.5rem;
+  place-items: center;
+  gap: 1rem 2rem;
   height: auto;
   font-family: "EB Garamond", serif;
   width: 100%;
-  min-height: 2rem;
-  cursor: pointer;
+  /* justify-content: center;
+  align-items: center; */
+  min-height: 3rem;
   margin: 4px 2px 4px 0;
 }

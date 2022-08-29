@@ -48,7 +48,7 @@ const CountriesList = () => {
   }
 
   return (
-    <div className={classes.countriesContainer}>
+    <>
       <div className={classes.searchForm}>
         <input
           type="text"
@@ -60,24 +60,26 @@ const CountriesList = () => {
         </button>
       </div>
       {loading && <Loading />}
-      <div className={classes.cardContainer}>
-        {countryList.map((country) => (
-          <Card
-            key={country.name.common}
-            src={country.flags.svg}
-            countryName={capitalize(country.name.common)}
-            capital={country.capital}
-            population={k_mFormatter(country.population)}
-            continent={country.continents}
-            timezone={country.timezones[0]}
-            language={Object.values(country.languages || {}).join(", ")}
-            currency={Object.values(country.currencies || {}).map(
-              (currency) => currency.name
-            )}
-          />
-        ))}
+      <div className={classes.countriesContainer}>
+        <div className={classes.cardContainer}>
+          {countryList.map((country) => (
+            <Card
+              key={country.name.common}
+              src={country.flags.svg}
+              countryName={capitalize(country.name.common)}
+              capital={country.capital}
+              population={k_mFormatter(country.population)}
+              continent={country.continents}
+              timezone={country.timezones[0]}
+              language={Object.values(country.languages || {}).join(", ")}
+              currency={Object.values(country.currencies || {}).map(
+                (currency) => currency.name
+              )}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

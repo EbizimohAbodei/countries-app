@@ -24,23 +24,20 @@ body {
   width: 100%;
 }
 
-Nav ul {
-  display: flex;
-  list-style: none;
-  flex-direction: row;
-  padding: 1rem 20px;
+.logo {
+  background: -webkit-linear-gradient(rgb(136, 207, 169), rgb(54, 79, 179));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5rem;
 }
 
-Nav a {
-  text-decoration: none;
-  padding: 0 15px;
-  font-size: 30px;
-  color: rgb(207, 203, 203);
+.navLink {
+  font-size: 1.5rem;
 }
 
-.active {
+.navLink:active {
   color: whitesmoke;
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid red;
 }
 
 .heroText {
