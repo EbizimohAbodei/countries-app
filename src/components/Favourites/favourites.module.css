@@ -1,0 +1,17 @@
+.favouritesMain {
+  margin-top: 3rem;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 6fr));
+  place-items: center;
+  gap: 1rem 2rem;
+  height: auto;
+  font-family: "EB Garamond", serif;
+  width: 100%;
+  /* justify-content: center;
+    align-items: center; */
+  min-height: 3rem;
+  margin: 4px 2px 4px 0;
+}

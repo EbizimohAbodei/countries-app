@@ -30,6 +30,7 @@
 
 .mapLink:hover {
   text-decoration: underline;
+  color: blue;
 }
 
 @media only screen and (max-height: 900px) {

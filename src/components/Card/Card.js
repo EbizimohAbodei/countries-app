@@ -3,44 +3,22 @@ import { useNavigate } from "react-router-dom";
 import classes from "./card.module.css";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
+import { useDispatch, useSelector } from "react-redux";
+import { addFav, removeFav } from "../../features/countries/countriesSlice";
+import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
 
 const Cards = (props) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const singlePage = () => {
     // 👇️ navigate to /
     navigate(`${props.countryName}`);
   };
 
+  const favs = useSelector((state) => state.countries.favourites);
+
   return (
-    // <div className={classes.card} onClick={singlePage} title="Click to view">
-    //   <img src={props.src} alt={props.name}></img>
-    //   <h2 className={classes.countryName}> {props.countryName}</h2>
-    //   <div className={classes.countryDetailsContainer}>
-    //     <div className={classes.countryDetails}>
-    //       <h4 className="countryCapital">Capital: {props.capital}</h4>
-    //       <h4 className="countryContinent">
-    //         Continent:
-    //         {props.continent}
-    //       </h4>
-    //       <h4 className="countryPopulation">Population: {props.population}</h4>
-    //     </div>
-    //     <div className={classes.countryDetailsContainer}>
-    //       <h4 className="countryLanguage">
-    //         Language:
-    //         {props.language}
-    //       </h4>
-    //       <h4 className="countryTimezone">
-    //         Currency:
-    //         {props.currency}
-    //       </h4>
-    //       <h4 className="countryTimezone">
-    //         Time-zone:
-    //         {props.timezone}
-    //       </h4>
-    //     </div>
-    //   </div>
-    // </div>
     <>
       <Card style={{ width: "18rem" }}>
         <Card.Body
@@ -77,6 +55,21 @@ const Cards = (props) => {
           >
             See more
           </Card.Link>
+          {favs
+            .map((country) => country.countryName)
+            .includes(props.countryName) ? (
+            <BsSuitHeartFill
+              onClick={() => dispatch(removeFav(props))}
+              title="remove from favourite"
+              className={classes.addRemoveButtons}
+            />
+          ) : (
+            <BsSuitHeart
+              onClick={() => dispatch(addFav(props))}
+              title="add to favourite"
+              className={classes.addRemoveButtons}
+            />
+          )}
         </Card.Body>
       </Card>
     </>

@@ -46,3 +46,20 @@
   min-height: 3rem;
   margin: 4px 2px 4px 0;
 }
+
+.backToTop {
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+  height: 32px;
+  width: 32px;
+  border-style: none;
+  border-radius: 5rem;
+  background-color: #399b9b;
+  cursor: pointer;
+  color: whitesmoke;
+}
+
+.backToTop:hover {
+  background-color: #1b365c;
+}

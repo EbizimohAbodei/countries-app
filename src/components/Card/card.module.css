@@ -50,7 +50,13 @@
   justify-content: space-between;
 } */
 
-.seeMore:hover {
+.addRemoveButtons {
+  position: absolute;
+  right: 1rem;
+}
+
+.seeMore,
+.addRemoveButtons:hover {
   cursor: pointer;
 }
 

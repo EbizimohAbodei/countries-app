@@ -2,8 +2,11 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
+  const favs = useSelector((state) => state.countries.favourites);
+
   return (
     <>
       <Navbar bg="light" variant="light" fixed="top" className="navBar">
@@ -18,8 +21,8 @@ const NavBar = () => {
             <Nav.Link href="/countries" className="navLink">
               Countries
             </Nav.Link>
-            <Nav.Link href="/about" className="navLink">
-              About
+            <Nav.Link href="/favourites" className="navLink">
+              Favourites {favs.length > 0 ? `(${favs.length})` : ""}
             </Nav.Link>
           </Nav>
         </Container>

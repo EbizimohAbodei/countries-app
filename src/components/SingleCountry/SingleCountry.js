@@ -34,7 +34,7 @@ const SingleCountry = (props) => {
         target="blank"
         className={classes.mapLink}
       >
-        Country in GoogleMaps
+        See Country in GoogleMaps
       </a>
     </div>
   );
