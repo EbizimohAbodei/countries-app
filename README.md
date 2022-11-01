@@ -37,4 +37,4 @@ You may also see any lint errors in the console.
 
 ## Live page on ??
 
-Link:
+Link: https://countries-app-hbc.netlify.app/
